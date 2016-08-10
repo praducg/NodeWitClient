@@ -1,8 +1,8 @@
 'use strict';
 module.exports = {
-  //Logger: require('./lib/log.js').Logger,
-  //logLevels: require('./lib/logger.js').logLevels,
-  Wit: require('./lib/wit.js').Wit,
+  log: require('./lib/log'),
+  Wit: require('./lib/wit'),
+  interactive: require('./lib/interactive')
 }
 let log = null;
 const bodyParser = require('body-parser');
@@ -145,5 +145,4 @@ app.get('/webhook', (req, res, next) => {
     res.sendStatus(400);
 	next();
 });
-
 
