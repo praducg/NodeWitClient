@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+function getContent(){
+var userId=$("#UserId").val().trim();
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://hu4xwdeme9.execute-api.us-east-1.amazonaws.com/DEV/bankingbot/accountsummary",
+  "method": "POST",
+  "headers": {
+    "content-type": "application/json",
+    "cache-control": "no-cache",
+    "postman-token": "89cf831c-86f0-946d-d1ce-d01c044c1398"
+  },
+  "processData": false,
+  "data":{'userKey':userId} 
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+  $( "#resp" ).append( response );
+  $('#UserId').val('');
+});
+}
+</script>
+</head>
+<body>
+
+<p>Start typing message in below texarea:</p>
+Input userId:<br/>
+
+<input type="text" name="UserId" id="UserId"></textarea><br/>
+<input type="button" value="Send Key" onclick="javascript:getContent()" />
+<p>Bot Reply: <span></span></p>
+<textarea rows="10" cols="50" id="resp" disabled="true"></textarea>
+
+</body>
+</html>
+
