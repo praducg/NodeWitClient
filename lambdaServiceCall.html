@@ -1,6 +1,6 @@
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js "></script>
 <script>
 function getContent(){
 var userKey=$("#UserId").val().trim();
@@ -8,30 +8,27 @@ var settings = {
   "crossDomain": true,
   "url": "https://hu4xwdeme9.execute-api.us-east-1.amazonaws.com/DEV/bankingbot/accountsummary?userKey="+userKey,
   "method": "GET",
-
-  "headers": {
-    "content-type": "application/json"
-  },
   "processData": false
 }
 
 $.ajax(settings).done(function (response) {
   console.log(response);
-  $( "#resp" ).append( response );
+  if(response){
+  $( "#resp" ).text( JSON.stringify(response, null, '\t') );
+  }
   $('#UserId').val('');
 });
 }
 </script>
 </head>
-<body>
-
-<p>Start typing message in below texarea:</p>
-Input userId:<br/>
-
-<input type="text" name="UserId" id="UserId"></textarea><br/>
-<input type="button" value="Send Key" onclick="javascript:getContent()" />
-<p>Bot Reply: <span></span></p>
-<textarea rows="10" cols="50" id="resp" disabled="true"></textarea>
+<body align="center">
+<title> Welcome to amazon webservice</title>
+<p align="center" style="color: DarkOrchid "><b>Welcome to AWS Lambda Application</b></p>
+<p style="color: SlateGrey">Input UserKey<p>
+<input type="text" name="UserId"  style="color: blue; background-color: MintCream "id="UserId"></textarea><br/><br/>
+<input type="button" value="Send Key" style="color: black;background-color: PaleTurquoise " size="100px" onclick="javascript:getContent()" />
+<p style="color: SlateGrey">AWS Response<span></span></p>
+<textarea rows="10" cols="50" id="resp" style="color: SlateGrey	; background-color: mintCream" disabled="true"></textarea>
 
 </body>
 </html>
