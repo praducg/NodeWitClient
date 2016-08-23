@@ -5,54 +5,55 @@
 function getContent(){
 var userKey=$("#UserId").val().trim();
 var accountType=$("#accountType").val().trim();
-if(userKey=='' || userKey=='undefined')
-{
-	alert("UserKey should bot be empty");
-	return false;
-}
-if(accountType=='' || accountType=='undefined')
-{
+	if(userKey=='' || userKey=='undefined')
+	{
+		alert("UserKey should bot be empty");
+		return false;
+	}
+	if(accountType=='' || accountType=='undefined')
+	{
+		var settings = {
+	  "crossDomain": true,
+	  "url": "https://hu4xwdeme9.execute-api.us-east-1.amazonaws.com/DEV/bankingbot/accountsummary?userKey="+userKey,
+	  "method": "GET",
+	  "processData": false
+	}
+	$.ajax(settings).done(function (response) {
+	  console.log(response);
+	  if(response){
+	  $( "#resp" ).text( JSON.stringify(response, null, '\t') );
+	  }
+	  $('#UserId').val('');
+	  $('#accountType').val('');
+	  $('#resp').val('');
+	});
+	}
+	else
+	{
 	var settings = {
-  "crossDomain": true,
-  "url": "https://hu4xwdeme9.execute-api.us-east-1.amazonaws.com/DEV/bankingbot/accountsummary?userKey="+userKey,
-  "method": "GET",
-  "processData": false
-}
-$.ajax(settings).done(function (response) {
-  console.log(response);
-  if(response){
-  $( "#resp" ).text( JSON.stringify(response, null, '\t') );
-  }
-  $('#UserId').val('');
-  $('#accountType').val('');
-});
-}
-else
-{
-var settings = {
-  "crossDomain": true,
-  "url": "https://hu4xwdeme9.execute-api.us-east-1.amazonaws.com/DEV/bankingbot/accountsummary?userKey="+userKey+"&accountType="+accountType,
-  "method": "GET",
-  "processData": false
-}
+	  "crossDomain": true,
+	  "url": "https://hu4xwdeme9.execute-api.us-east-1.amazonaws.com/DEV/bankingbot/accountsummary?userKey="+userKey+"&accountType="+accountType,
+	  "method": "GET",
+	  "processData": false
+	}
 
-$.ajax(settings).done(function (response) {
-  console.log(response);
-  if(response){
-  $( "#resp" ).text( JSON.stringify(response, null, '\t') );
-  }
-  $('#UserId').val('');
-  $('#accountType').val('');
-});
+	$.ajax(settings).done(function (response) {
+	  console.log(response);
+	  if(response){
+	  $( "#resp" ).text( JSON.stringify(response, null, '\t') );
+	  }
+	  $('#UserId').val('');
+	  $('#accountType').val('');
+	});
 }}
 </script>
 </head>
 <body align="center">
 <title> Welcome to amazon webservice</title>
 <p align="center" style="color: DarkOrchid "><b>Welcome to AWS Lambda Application</b></p>
-<p style="color: SlateGrey">Input UserKey
+<p style="color: SlateGrey">UserKey
 <input type="text" name="UserId"  style="color: blue; background-color: MintCream "id="UserId"></p>
-<p style="color: SlateGrey">Input AccountType(Optional)<input type="text" name="accountType"  style="color: blue; background-color: MintCream "id="accountType"></p>
+<p style="color: SlateGrey">Account Type(Optional)<input type="text" name="accountType"  style="color: blue; background-color: MintCream "id="accountType"></p>
 <input type="button" value="Send Key" style="color: black;background-color: PaleTurquoise " size="100px" onclick="javascript:getContent()" />
 <p style="color: SlateGrey">AWS Response<span></span></p>
 <textarea rows="10" cols="50" id="resp" style="color: SlateGrey	; background-color: mintCream" disabled="true"></textarea>
