@@ -40,7 +40,7 @@ callLambdaService("1001", function(resp){
 	//Hurray Got response ..Now convert this to string
 	body=JSON.stringify(resp);;
 });
-//app.get('/',function(req,res){
+app.get('/',function(req,res){
 	//Send this response to browser
-  //  res.send(body);
-//});
+    res.send(body);
+});
