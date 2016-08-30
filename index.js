@@ -22,3 +22,6 @@ response.sendFile(path.join(__dirname+'/lambdaServiceCall.html'));
 app.get('/spinner.gif', function(request, response, next){
     response.sendFile(path.join(__dirname+'/spinner.gif'));
 });
+app.get('/', function(request, response, next){
+    response.sendFile(path.join(__dirname+'/lambdaServiceCall.html'));
+});
