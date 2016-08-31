@@ -2,8 +2,7 @@ const PORT = process.env.PORT || 5000;
 const crypto = require('crypto');
 const fetch = require('node-fetch');
 var express = require('express')
-, cors = require('cors'),
-favicon = require('serve-favicon')
+, cors = require('cors')
 , app = express();
 var bodyParser = require('body-parser');
 app.use(cors());
