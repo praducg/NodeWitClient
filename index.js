@@ -20,6 +20,6 @@ response.sendFile(path.join(__dirname+'/lambdaServiceCall.html'));
 });
 
 
-app.get('/callwit', function(request, response, next){
+app.get('/test', function(request, response, next){
     response.sendFile(path.join(__dirname+'/lambdaServiceCall.html'));
 });
