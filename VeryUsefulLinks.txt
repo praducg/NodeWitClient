@@ -1,0 +1,22 @@
+username for geonames is 
+praducg
+email
+password:Test*1234
+
+Very useful links
+http://www.androidbegin.com/tutorial/android-populating-spinner-json-tutorial/
+Web service to get list of countries
+http://api.geonames.org/countryInfoJSON?username=praducg
+
+Web service to get list of state[India is the example]
+http://api.geonames.org/childrenJSON?geonameId=1269750&username=praducg
+
+Web service to get list of cities
+http://api.geonames.org/childrenJSON?geonameId=1267701&username=praducg
+
+https://stackoverflow.com/questions/9760341/retrieve-a-list-of-countries-from-the-android-os
+
+
+http://www.javaknowledge.info/populate-second-spinner-based-on-selection-of-first-spinner/
+
+https://www.mkyong.com/android/android-spinner-drop-down-list-example/
