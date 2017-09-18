@@ -20,3 +20,7 @@ https://stackoverflow.com/questions/9760341/retrieve-a-list-of-countries-from-th
 http://www.javaknowledge.info/populate-second-spinner-based-on-selection-of-first-spinner/
 
 https://www.mkyong.com/android/android-spinner-drop-down-list-example/
+
+Run multiple asynchronous tasks at a time.
+http://android-er.blogspot.in/2014/04/run-multi-asynctask-as-same-time.html
+http://blogs.innovationm.com/multiple-asynctask-in-android/
